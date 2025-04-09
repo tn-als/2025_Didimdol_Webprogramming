@@ -1,0 +1,13 @@
+퀴즈 결과
+
+1. 당신의 답: h1 -> 정답
+2. 당신의 답: position -> 정답
+3. 당신의 답: relative -> 정답
+4. 당신의 답: em -> 정답
+5. 당신의 답: image -> 정답
+6. 당신의 답: position -> 정답
+7. 당신의 답: color -> 정답
+8. 당신의 답: font-weight -> 정답
+9. 당신의 답: margin -> 정답
+10. 당신의 답: fixed -> 정답
+11. 당신의 답: text-overflow -> 정답
