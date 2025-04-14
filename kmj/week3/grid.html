@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid 카드 레이아웃 실습 202211414김민재</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 20px;
+    }
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .grid-card {
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: box-shadow 0.3s;
+      
+      background-image: url("back.png");
+      width: 205px;
+      height: 350px;
+    }
+    .grid-card:hover {
+      box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    }
+    .grid-card h3 {
+      margin-top: 0;
+    }
+
+    #card1:hover {
+      transform: scale(1.03);
+      background-size: 250px;
+      background-image: url("sj.png");
+     
+    }
+
+    #card2:hover {
+      transform: scale(1.03);
+      background-size: 250px;
+      background-image: url("sk.png");
+     
+    }
+
+    #card3:hover {
+      transform: scale(1.03);
+      background-size: 250px;
+      background-image: url("sq.png");
+     
+    }
+  </style>
+</head>
+<body>
+  <h2>Grid 카드 레이아웃 : 실습 202211414김민재</h2>
+  <div class="grid-container">
+    <div class="grid-card"  id = "card1">
+    
+    </div>
+    <div class="grid-card"  id = "card2">
+    
+    </div>
+    <div class="grid-card"  id = "card3">
+   
+    </div>
+
+   
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flexbox 카드 레이아웃  실습 202211414김민재</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 20px;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .card {
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+
+      background-image: url("back.png");
+      width: 205px;
+      height: 350px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+    #card1:hover {
+      transform: scale(1.03);
+      background-size: 250px;
+      background-image: url("sj.png");
+     
+    }
+
+    #card2:hover {
+      transform: scale(1.03);
+      background-size: 250px;
+      background-image: url("sk.png");
+     
+    }
+
+    #card3:hover {
+      transform: scale(1.03);
+      background-size: 250px;
+      background-image: url("sq.png");
+     
+    }
+    
+    .card h3 {
+      margin: 0 0 10px;
+    }
+  
+  </style>
+</head>
+<body>
+  <h2>Flexbox 카드 레이아웃 : 실습 202211414김민재</h2>
+  <div class="container">
+    <div class="card" id = "card1">
+
+    </div>
+    <div class="card" id = "card2">
+      
+    </div>
+    <div class="card" id = "card3">
+    
+    </div>
+  </div>
+</body>
+</html>
