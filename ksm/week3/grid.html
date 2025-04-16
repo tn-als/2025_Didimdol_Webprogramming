@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid 카드 레이아웃</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 20px;
+    }
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .grid-card {
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: box-shadow 0.3s;
+    }
+    .grid-card:hover {
+      box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    }
+    .grid-card h3 {
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+  <h2>Grid 카드 레이아웃</h2>
+  <div class="grid-container">
+    <div class="grid-card">
+      <h3>카드 A</h3>
+      <p>Grid로 정렬된 카드입니다.</p>
+    </div>
+    <div class="grid-card">
+      <h3>카드 B</h3>
+      <p>간단한 내용을 카드로 보여줍니다.</p>
+    </div>
+    <div class="grid-card">
+      <h3>카드 C</h3>
+      <p>자동 정렬이 되어 화면 크기에 따라 배치가 바뀝니다.</p>
+    </div>
+  </div>
+</body>
+</html>
