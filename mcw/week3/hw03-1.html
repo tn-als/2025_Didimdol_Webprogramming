@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+ <html lang="ko">
+ <head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   <title>Flexbox 카드 레이아웃</title>
+   <style>
+     body {
+       font-family: sans-serif;
+       margin: 20px;
+     }
+     .container {
+       display: flex;
+       flex-wrap: wrap;
+       gap: 20px;
+       justify-content: center;
+     }
+     .card {
+       background: #f9f9f9;
+       border: 1px solid #ddd;
+       border-radius: 10px;
+       padding: 20px;
+       width: 250px;
+       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+       transition: transform 0.2s;
+     }
+     .card:hover {
+       transform: scale(1.03);
+     }
+     .card h3 {
+       margin: 0 0 10px;
+     }
+     .card p {
+       color: #555;
+     }
+   </style>
+ </head>
+ <body>
+   <h2>Flexbox 카드 레이아웃</h2>
+   <div class="container">
+     <div class="card">
+       <h3>인적사항</h3>
+       <p>학교: 경기대학교 학과: AI컴퓨터공학부 컴퓨터공학과 학번: 202211444 이름: 문찬우 본가: 경기도 김포시</p>
+     </div>
+     <div class="card">
+       <h3>취미</h3>
+       <p>카페에서 공부하기, 산책, 음악 듣기, 헬스</p>
+     </div>
+     <div class="card">
+       <h3>목표</h3>
+       <p>장학금 받기, 헬창 되기, 공부 열심히 하기</p>
+     </div>
+   </div>
+ </body>
+ </html>
