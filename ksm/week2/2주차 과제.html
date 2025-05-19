@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS 퀴즈</title>
+</head>
+
+<body>
+    <h1>CSS 퀴즈</h1>
+    <form id="quizForm">
+        <ol>
+            <li>HTML 페이지 내부의 모든 h1 태그의 color 스타일 속성을 변경하려면 (<input type="text" name="q1">) 선택자를 사용합니다.</li>
+            <li>자손의 position 속성에 absolute를 적용하여 절대 위치를 사용하려면 부모에 (<input type="text" name="q2">) 속성을 입력하고, 부모의 position 속성에
+                (<input type="text" name="q3">)를 적용합니다.</li>
+            <li>CSS3의 크기 단위 중 (<input type="text" name="q4">)은 배수를 나타내는 단위입니다.</li>
+            <li>background-(<input type="text" name="q5">) 속성은 배경 이미지를 넣을 때 사용합니다.</li>
+            <li>(<input type="text" name="q6">) 속성은 요소의 위치 지정 형식을 설정할 때 사용합니다.</li>
+            <li>글자 색상을 지정하는 속성은 (<input type="text" name="q7">)입니다.</li>
+            <li>텍스트를 굵게 표시하는 속성은 (<input type="text" name="q8">)입니다.</li>
+            <li>요소를 화면의 중앙에 배치할 때, width 속성을 부여하고 (<input type="text" name="q9">) 속성을 '0 auto'로 입력합니다.</li>
+            <li>고정 바를 만들 때 position 속성에 (<input type="text" name="q10">)를 적용하고 위치를 설정합니다.</li>
+            <li>특정한 너비를 넘어가는 글자를 자동으로 생략하려면 (<input type="text" name="q11">) 클래스를 만듭니다.</li>
+        </ol>
+        <button type="button" onclick="submitQuiz()">완료</button>
+    </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script>
+        // Base64로 인코딩된 정답
+        const encodedAnswers = {
+            q1: 'aDE=',
+            q2: 'cG9zaXRpb24=',
+            q3: 'cmVsYXRpdmU= ',
+            q4: 'ZW0=',
+            q5: 'aW1hZ2U=',
+            q6: 'cG9zaXRpb24=',
+            q7: 'Y29sb3I=',
+            q8: 'Zm9udC13ZWlnaHQ=',
+            q9: 'bWFyZ2lu',
+            q10: 'Zml4ZWQ=',
+            q11: 'dGV4dC1vdmVyZmxvdw=='
+        };
+
+        function decodeBase64(str) {
+            const binary = atob(str);
+            let result = '';
+            for (let i = 0; i < binary.length; i++) {
+                result += String.fromCharCode(binary.charCodeAt(i));
+            }
+            try {
+                return decodeURIComponent(escape(result)); // 한글도 복원됨
+            } catch (e) {
+                return result;
+            }
+        }
+
+
+
+        function submitQuiz() {
+            const form = document.getElementById('quizForm');
+            const formData = new FormData(form);
+            let resultText = '퀴즈 결과\n\n';
+            let index = 1;
+
+            for (const [key, encoded] of Object.entries(encodedAnswers)) {
+                const correct = decodeBase64(encoded);
+                const userAnswer = (formData.get(key) || '').trim();
+                const isCorrect = userAnswer.toLowerCase() === correct.toLowerCase();
+                resultText += `${index}. 당신의 답: ${userAnswer} -> ${isCorrect ? '정답' : `오답 (정답: ${correct})`}\n`;
+                index++;
+            }
+
+            downloadResult(resultText);
+        }
+
+        function downloadResult(text) {
+            const blob = new Blob([text], { type: 'text/plain' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'quiz_result.txt';
+            a.click();
+            URL.revokeObjectURL(a.href);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flexbox</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 20px;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .card {
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      width: 250px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: scale(1.03);
+    }
+    .card h3 {
+      margin: 0 0 10px;
+    }
+    .card p {
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h2>Flexbox 카드 레이아웃</h2>
+  <div class="container">
+    <div class="card">
+      <h3>Hello, Wolrd</h3>
+      <p>많은 프로그래머들이 개발환경 셋업을 확인하기 위한 용도로 작성하는 프로그램입니다.</p>
+    </div>
+    <div class="card">
+      <h3>할말</h3>
+      <p>더이상 할말이 없네요 시험기간이 빨리 끝났음면 좋겠습니다.</p>
+    </div>
+    <div class="card">
+      <h3>컴구 시험</h3>
+      <p>오늘본 컴구 시험.. 망쳤습니다. 너무 바보같이 틀려서 반응형으로 화가 나네요</p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>반응형 웹 과제</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <header>
+        <img src="spacelogo.png" alt="태극기" />
+        <h1>애니메이션과 반응형 메뉴_202211414김민재</h1>
+    </header>
+
+    <nav>
+        <a href="#" onclick="showAlert(event)">홈</a>
+        <a href="#" onclick="showTab(event, 'todo')">To-Do List</a>
+        <a href="#" onclick="showTab(event, 'done')">완료한 일</a>
+        <a href="#" onclick="showTab(event, 'settings')">설정</a>
+    </nav>
+
+    <div class="banner"></div>
+
+    <div class="content">
+        <h2>환영합니다!</h2>
+        <p>이 페이지는 다양한 화면 크기에 맞춰 자동으로 조정됩니다.</p>
+        <button class="animated-button" onclick="showAlert(event)">자세히 보기</button>
+
+        <!-- To-Do 영역 -->
+        <div id="todo-section" style="display: none; margin-top: 40px;">
+            <h3>📌 나의 할 일</h3>
+            <input type="text" id="todo-input" placeholder="할 일을 입력하세요"
+                style="padding: 10px; width: 60%; max-width: 300px;">
+            <button onclick="addTodo()" style="padding: 10px 15px;">추가</button>
+            <ul id="todo-list" style="list-style: none; padding: 0; margin-top: 20px;"></ul>
+        </div>
+
+        <!-- 완료한 일/설정 클릭 시 안내 -->
+        <div id="other-section" style="display: none; margin-top: 40px;">
+           
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
